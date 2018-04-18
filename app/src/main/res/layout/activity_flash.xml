@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.com.lcxy.cardanimation.activity.FlashActivity">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_marginRight="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="5dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="说明"
+            android:textColor="#000"
+            android:textSize="30sp"
+            />
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="描述信息"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            />
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll"
+            android:background="@drawable/shape_button_bg"
+            android:text="开   始"
+            android:layout_marginTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            />
+    </LinearLayout>
+</RelativeLayout>

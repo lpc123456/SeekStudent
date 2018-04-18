@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg03"
+    >
+    <TextView
+        android:id="@+id/tv_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用帮助"
+        android:textColor="#ccc"
+        android:layout_margin="5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+    <FrameLayout
+        android:id="@+id/card_main_container"
+        android:layout_width="300dp"
+        android:layout_height="460dp"
+        android:layout_gravity="center_horizontal"
+        >
+        <include layout="@layout/activity_card_back"/>
+
+        <include layout="@layout/activity_card_front" />
+    </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_result"
+            android:layout_width="101dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#FF630983"
+            android:text="提交结果"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:visibility="invisible" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            >
+            <Button
+                android:id="@+id/btn_manual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="手动点名"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:background="@drawable/shape_button_bg"/>
+            <Button
+                android:id="@+id/btn_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="设置班级"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:background="@drawable/shape_button_bg"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
