@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Random random;
 
     private List<Student> mStudents;
+
+    public static AppCompatActivity mMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_result://提交按钮
                 mBtnSClick3.play();
                 Intent intent1=new Intent(this,CommitActivity.class);
+                mMainActivity=MainActivity.this;
                 startActivity(intent1);
                 break;
         }
@@ -192,6 +196,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-//        randomId=random.nextInt(soundRes.length);
+        Intent intent=getIntent();
+        boolean reset=intent.getBooleanExtra("reset",false);
+
     }
 }

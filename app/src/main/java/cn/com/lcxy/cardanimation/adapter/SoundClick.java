@@ -17,13 +17,11 @@ public abstract class SoundClick implements View.OnClickListener {
     private SoundPool soundPool;    //声明一个SoundPool
     private int music;//定义一个整型用load（）；来设置suondID
     private Context context;
-    private MediaPlayer player;
 
     public SoundClick(Context context,int res) {
-        soundPool=new SoundPool(10, AudioManager.STREAM_SYSTEM, 5);
+        soundPool=new SoundPool(10, AudioManager.STREAM_MUSIC, 5);
         this.context=context;
         this.music = soundPool.load(context, res,1);
-        player=new MediaPlayer();
     }
 
     @Override
