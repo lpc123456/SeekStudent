@@ -5,6 +5,8 @@
         android:duration="@integer/anim_length_short"
         android:propertyName="rotationY"
         android:valueFrom="0"
+        android:repeatCount="3"
+        android:repeatMode="reverse"
         android:valueTo="180"/>
 
     <!--消失-->

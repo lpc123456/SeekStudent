@@ -63,6 +63,26 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\Android\MyProject\project02\SeekStudent\app\libs\httpmime-4.0.1.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9d99c393b45cb7abf8a104176fb751e32b1b4502">
+        <dex dex="D:\Android\MyProject\project02\SeekStudent\app\build\intermediates\transforms\preDex\release\6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\MyProject\project02\SeekStudent\app\libs\commons-logging-1.1.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ba24d5de831911b684c92cd289ed5ff826271824">
+        <dex dex="D:\Android\MyProject\project02\SeekStudent\app\build\intermediates\transforms\preDex\release\2.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Android\temp\CardAnimation\app\libs\commons-lang-2.5.jar"
         jumboMode="false"
         min-sdk-version="15"
@@ -70,6 +90,46 @@
         revision="26.0.2"
         sha1="b0236b252e86419eef20c31a44579d2aee2f0a69">
         <dex dex="D:\Android\temp\CardAnimation\app\build\intermediates\transforms\preDex\release\1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\MyProject\project02\SeekStudent\app\libs\httpcore-nio-4.0.1.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="26.0.2"
+        sha1="667ab0c0a78601c9f6cddccc2bc2c33ce1d39d76">
+        <dex dex="D:\Android\MyProject\project02\SeekStudent\app\build\intermediates\transforms\preDex\release\5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\MyProject\project02\SeekStudent\app\libs\commons-lang-2.5.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b0236b252e86419eef20c31a44579d2aee2f0a69">
+        <dex dex="D:\Android\MyProject\project02\SeekStudent\app\build\intermediates\transforms\preDex\release\1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\MyProject\project02\SeekStudent\app\libs\httpcore-4.0.1.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2cef8e735e306f6be94b609be815854f9cf36eb6">
+        <dex dex="D:\Android\MyProject\project02\SeekStudent\app\build\intermediates\transforms\preDex\release\4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\MyProject\project02\SeekStudent\app\libs\httpclient-4.0.1.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="26.0.2"
+        sha1="50e369a13a3e2892ff4dfd341ea17f21c9906824">
+        <dex dex="D:\Android\MyProject\project02\SeekStudent\app\build\intermediates\transforms\preDex\release\3.jar" />
     </item>
 
 </items>

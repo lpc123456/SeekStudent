@@ -2,6 +2,6 @@
 <resources>
     <integer name="anim_length">5000</integer>
     <integer name="anim_half_length">2500</integer>
-    <integer name="anim_length_short">0</integer>
-    <integer name="anim_half_length_short">0</integer>
+    <integer name="anim_length_short">3000</integer>
+    <integer name="anim_half_length_short">1500</integer>
 </resources>

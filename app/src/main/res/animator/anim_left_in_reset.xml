@@ -12,6 +12,8 @@
         android:duration="@integer/anim_length_short"
         android:propertyName="rotationY"
         android:valueFrom="-180"
+        android:repeatCount="3"
+        android:repeatMode="reverse"
         android:valueTo="0"/>
 
     <!--出现-->

@@ -8,11 +8,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.Random;
@@ -20,13 +24,15 @@ import java.util.Random;
 import cn.com.lcxy.cardanimation.R;
 import cn.com.lcxy.cardanimation.adapter.SoundClick;
 import cn.com.lcxy.cardanimation.bean.Student;
+import cn.com.lcxy.cardanimation.utils.SeekStudentUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = "MainActivity";
     private FrameLayout mCardMainContainer;
     private LinearLayout mCardFontContainer, mCardBackContainer;
 
     private Button btn_manual,btn_setting,btn_result;
-    private TextView tv_help,tv_class,tv_name,tv_score;
+    private TextView tv_help,tv_class,tv_name,tv_score,tv_college,tv_studentId;
 
     private AnimatorSet mRightOutAnimatorSet, mLeftInAnimatorSet;
 
@@ -42,13 +48,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Random random;
 
-    private List<Student> mStudents;
+    private Student mStudent;//抽中的对象
 
     public static AppCompatActivity mMainActivity;
+
+    private int countCard;//旋转次数标识
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
         initView();
@@ -67,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_class=findViewById(R.id.tv_class);
         tv_name=findViewById(R.id.tv_name);
         tv_score=findViewById(R.id.tv_score);
+        tv_college=findViewById(R.id.tv_college);
+        tv_studentId=findViewById(R.id.tv_studentId);
         setAnimators(); // 设置动画
         setCameraDistance(); // 设置镜头距离
     }
@@ -148,6 +160,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void flipCard() {
         if (!mIsShowBack) {  // 正面朝上
             mCardSClick.play();
+            mStudent=SeekStudentUtils.getStudent(MainActivity.this);
+            updateView(mStudent);
             mRightOutAnimatorSet.setTarget(mCardFontContainer);
             mLeftInAnimatorSet.setTarget(mCardBackContainer);
 //            mLeftInAnimatorSet.setDuration(mTimeAnimation);
@@ -174,11 +188,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_manual://手动点名
                 mBtnSClick1.play();
-
+                Intent intent2=new Intent(MainActivity.this,ManualActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.btn_setting://班级设置
                 mBtnSClick2.play();
-
+                Toast.makeText(MainActivity.this, "功能未开放", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tv_help://使用帮助
                 Intent intent=new Intent(this,FlashActivity.class);
@@ -187,15 +202,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_result://提交按钮
                 mBtnSClick3.play();
                 Intent intent1=new Intent(this,CommitActivity.class);
+                intent1.putExtra("student",mStudent);
                 mMainActivity=MainActivity.this;
                 startActivity(intent1);
                 break;
         }
     }
+    public void updateView(Student student){
+        tv_name.setText(student.getName()+"");
+        tv_score.setText(student.getScore()+"");
+        tv_class.setText(student.getClassName()+"");
+        tv_college.setText(student.getCollegeName()+"");
+        tv_studentId.setText(student.getId()+"");
 
+    }
     @Override
     protected void onResume() {
         super.onResume();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy: .........");
+        mBtnSClick1.release();
+        mCardSClick.release();
+        mBtnSClick2.release();
+        mBtnSClick3.release();
     }
 }

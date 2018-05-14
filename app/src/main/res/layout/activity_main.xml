@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="@drawable/bg03"
+    android:paddingTop="20dp"
     >
     <TextView
         android:id="@+id/tv_help"

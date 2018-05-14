@@ -39,4 +39,7 @@ public abstract class SoundClick implements View.OnClickListener {
     public void setMusic(int res) {
         this.music = soundPool.load(context, res,1);
     }
+    public void release(){
+        soundPool.release();
+    }
 }

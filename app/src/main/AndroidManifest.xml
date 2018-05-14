@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.com.lcxy.cardanimation">
-
+<uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.MainActivity"
-            android:launchMode="singleTask"
-            >
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +21,10 @@
         <activity android:name=".activity.FlashActivity" />
         <activity android:name=".activity.ManualActivity" />
         <activity android:name=".activity.SettingClassActivity" />
-        <activity android:name=".activity.CommitActivity"></activity>
+        <activity android:name=".activity.CommitActivity" />
+        <activity android:name=".activity.Main2Activity">
+
+        </activity>
     </application>
 
 </manifest>

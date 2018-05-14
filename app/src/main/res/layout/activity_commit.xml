@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg03"
+    android:paddingTop="20dp"
     tools:context="cn.com.lcxy.cardanimation.activity.CommitActivity">
     <Button
         android:id="@+id/btn_backMain"
